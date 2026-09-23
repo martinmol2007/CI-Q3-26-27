@@ -1,0 +1,11 @@
+# Copias de seguridad de Proteus
+*.pdsbak
+*.workspace
+ 
+# Salidas de compilación de MPASM
+*.hex
+*.cod
+*.cof
+*.lst
+*.err
+*.o
