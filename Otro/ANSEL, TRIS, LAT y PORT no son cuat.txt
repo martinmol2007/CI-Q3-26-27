@@ -1,0 +1,8 @@
+ANSEL, TRIS, LAT y PORT no son cuatro formas de hacer lo mismo. Son cuatro registros que controlan etapas distintas del mismo pin. Un pin físico atraviesa varias "capas" de configuración, y cada registro manda en una capa.
+
+Piensa en cada pin como una puerta con varios interruptores en serie:
+
+ANSEL — ¿esta puerta funciona en modo analógico o digital?
+TRIS — ¿es una entrada o una salida?
+LAT — si es salida, ¿qué valor saco por ella?
+PORT — ¿qué está entrando de verdad por ella ahora mismo?
