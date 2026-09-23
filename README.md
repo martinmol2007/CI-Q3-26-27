@@ -17,20 +17,6 @@ Repositorio personal de la asignatura **Interfícies de Computadors (CI)** de la
  
 Temas que se trabajan: puertos de E/S, registros SFR/GPR, direccionamiento indirecto con FSR, y el resto de periféricos que vayan saliendo durante el curso.
  
----
- 
-## 📁 Estructura del repositorio
- 
-```
-.
-├── practicas/        # Proyectos de las sesiones de laboratorio (.pdsprj + código .asm)
-├── ejercicios/       # Ejercicios sueltos y pruebas
-├── apuntes/          # Resúmenes, chuletas y teoría
-├── examenes/         # Preparación de exámenes
-└── README.md
-```
- 
-> Adapta esta estructura a cómo organices realmente las carpetas.
  
 ---
  
