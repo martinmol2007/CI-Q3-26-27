@@ -41,7 +41,7 @@ Para no subir archivos generados ni copias de seguridad:
 # Copias de seguridad de Proteus
 *.pdsbak
 *.workspace
-*Project Backups/
+Project Backups/
  
 # Salidas de compilación de MPASM
 *.hex
