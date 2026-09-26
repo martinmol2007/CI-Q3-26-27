@@ -1,6 +1,7 @@
 # Copias de seguridad de Proteus
 *.pdsbak
 *.workspace
+Project Backups/*
  
 # Salidas de compilación de MPASM
 *.hex
