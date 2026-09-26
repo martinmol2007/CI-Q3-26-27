@@ -36,26 +36,60 @@ Start
       ; Configura puertos como digitales
       clrf ANSELB, BANKED
       clrf ANSELC, BANKED
+      clrf ANSELD, BANKED
       
       ; RB0 -> entrada(boton)
       bsf TRISB, 0, ACCESS
+      ; RB1 -> entrada(boton)
+      bsf TRISB, 1, ACCESS
+      
       ; RC6 -> salida(LED)
       bcf TRISC, 6, ACCESS
-      ; LED (inicialmente apagado)
+      ; RC2 -> salida(LED)
+      bcf TRISC, 2, ACCESS
+      ; RD7 -> salida(Condensador)
+      bcf TRISD, 7, ACCESS
+      
+      ; LED1 (inicialmente apagado)
       bcf LATC, 6, ACCESS
+      ; LED2 (inicialmente apagado)
+      bcf LATC, 2, ACCESS
+      ; Inicialmente apagado Condensador
+      bcf LATD, 7, ACCESS
       
 Loop  
+    
       btfsc PORTB, 0, ACCESS
-      goto LED_ON
-      goto LED_OFF
+      goto LED1_ON
+      goto LED1_OFF
       
-LED_ON
+LED1_ON
       bsf LATC, 6, ACCESS; Sortida LED a 1
-      goto  Loop
-LED_OFF
-      bcf LATC, 6, ACCESS; Sortida LED a 0
-      goto  Loop
+      goto  Check_LED2
       
+LED1_OFF
+      bcf LATC, 6, ACCESS; Sortida LED a 0
+      goto  Check_LED2
 
+Check_LED2	
+      ; Aprovechamos la condicion del LED2, ya que se necesita el segundo Boton (RB1) 
+      ; para hacer lo que piden para el Circuito RC
+      btfss PORTB, 1, ACCESS
+      goto LED2_ON
+      goto LED2_OFF
+    
+LED2_ON
+      bcf LATD, 7, ACCESS ; RD7 = 0 Se descarga
+      bsf LATC, 2, ACCESS
+      goto Loop
+      
+LED2_OFF
+      bsf LATD, 7, ACCESS ; RD7 = 1 Se carga
+      bcf LATC, 2, ACCESS
+      goto Loop
+
+
+  
+     
 ;====================================================================
       END
