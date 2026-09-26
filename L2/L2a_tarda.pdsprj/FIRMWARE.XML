@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
-<FIRMWARE FAMILY="PIC18" COMPILER="MPASM (Proteus)" TYPE="PIC18F45K22">
- <PROJECTS>
-  <STRING>PIC18F45K22_1</STRING>
- </PROJECTS>
-</FIRMWARE>
